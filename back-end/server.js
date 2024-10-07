@@ -101,7 +101,7 @@ io.on('connection', async (socket) => {
                     time: currentTime,
                 };
     
-                io.emit('message', newMessage);
+                socket.broadcast.emit('message', newMessage);
             }
         } catch (err) {
             console.error('Error sending message:', err);
