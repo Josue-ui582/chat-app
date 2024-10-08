@@ -90,17 +90,21 @@ io.on('connection', async (socket) => {
     
             if (result.rows.length > 0) {
                 const { first_name, last_name } = result.rows[0];
-                const currentTime = new Date().toLocaleTimeString();
+                const currentTime = new Date().toLocaleString('fr-FR', { 
+                    hour: '2-digit', 
+                    minute: '2-digit', 
+                    second: '2-digit', 
+                    hour12: false 
+                });
     
                 const newMessage = {
                     content: msg.content,
-                    isCurrentUser: socket.id === msg.socketId,
                     userId: socket.userId,
                     firstName: first_name,
                     lastName: last_name,
-                    time: currentTime,
+                    timestamp: currentTime,
                 };
-    
+        
                 socket.broadcast.emit('message', newMessage);
             }
         } catch (err) {
@@ -121,6 +125,7 @@ io.on('connection', async (socket) => {
         io.emit('userList', connectedUsers);
     });
 });
+
 
 app.post('/api/signup', async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
@@ -166,19 +171,27 @@ app.post('/api/login', async (req, res) => {
 });
 
 
-app.get('/api/user', authenticateToken, (req, res) => {
-    const userId = req.user.id;
-    pool.query('SELECT first_name, last_name FROM users WHERE id = $1', [userId], (err, result) => {
-        if (err) {
-            return res.status(500).json({ error: 'Erreur du serveur' });
+app.get('/api/user', async (req, res) => {
+    try {
+        const userId = req.user.id;
+
+        const result = await pool.query(
+            'SELECT id, first_name, last_name FROM users WHERE id = $1',
+            [userId]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Utilisateur non trouvé' });
         }
-        if (result.rows.length > 0) {
-            res.json(result.rows[0]);
-        } else {
-            res.status(404).json({ error: 'Utilisateur non trouvé' });
-        }
-    });
+
+        const user = result.rows[0];
+        res.json(user);
+    } catch (error) {
+        console.error('Erreur lors de la récupération de l\'utilisateur :', error);
+        res.status(500).json({ error: 'Erreur serveur' });
+    }
 });
+
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
