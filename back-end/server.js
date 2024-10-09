@@ -91,9 +91,9 @@ io.on('connection', async (socket) => {
             if (result.rows.length > 0) {
                 const { first_name, last_name } = result.rows[0];
                 const currentTime = new Date().toLocaleString('fr-FR', { 
-                    hour: '2-digit', 
-                    minute: '2-digit', 
-                    second: '2-digit', 
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
                     hour12: false 
                 });
     
@@ -171,7 +171,7 @@ app.post('/api/login', async (req, res) => {
 });
 
 
-app.get('/api/user', async (req, res) => {
+app.get('/api/user', authenticateToken, async (req, res) => {
     try {
         const userId = req.user.id;
 
