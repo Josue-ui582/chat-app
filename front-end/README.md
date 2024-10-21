@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Chat Application (React JS & Node.js)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Cette application de chat en temps réel permet à plusieurs utilisateurs de discuter entre eux, similaire à WhatsApp. Le projet est construit avec **React JS** pour le frontend et **Node.js** pour le backend, avec **Socket.io** pour la communication en temps réel, et **PostgreSQL** pour le stockage des données.
 
-In the project directory, you can run:
 
-### `npm start`
+### Fonctionnalités
+- Authentification (inscription et connexion)
+- Messagerie instantanée en temps réel
+- Liste d'utilisateurs inscrits
+- Affichage des messages (les messages envoyés par l'utilisateur à droite, ceux des autres à gauche)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Structure du projet
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Le projet est structuré en deux parties :
+- **Frontend** : Construit avec React JS, se trouve dans le dossier `frontend/`
+- **Backend** : Construit avec Node.js et Express, se trouve dans le dossier `backend/`
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prérequis
+- Node.js
+- PostgreSQL
+- Git
 
-### `npm run build`
+### Étapes d'installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clonez le projet depuis le dépôt GitHub :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clonegit@github.com:Josue-ui582/chat-app.git
+   cd chat-app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Backend
 
-### `npm run eject`
+## Accédez au dossier backend/ et installez les dépendances :
+cd back-end
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Démarrez le serveur backend :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+node server.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Accédez au dossier frontend/ et installez les dépendances :
 
-## Learn More
+cd ../front-end
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Démarrez l'application React :
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm start
 
-### Code Splitting
+# Utilisation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Lancez d'abord le serveur backend :
 
-### Analyzing the Bundle Size
+cd back-end
+node server.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Ensuite, lancez le serveur frontend dans un autre terminal :
 
-### Making a Progressive Web App
+cd fron-tend
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Accédez à l'application à l'adresse http://localhost:3000 pour tester l'interface utilisateur de chat.
 
-### Advanced Configuration
+# Technologies Utilisées
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Frontend : React JS, CSS
+- Backend : Node.js, Express, Socket.io
+- Base de données : PostgreSQL
+- Communication en temps réel : Socket.io
 
-### Deployment
+# Contributions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une pull request ou à signaler des problèmes.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
