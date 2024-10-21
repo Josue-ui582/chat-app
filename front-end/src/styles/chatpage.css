@@ -1,0 +1,115 @@
+.chat-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.users{
+    margin: 15px 0;
+    color: #007bff;
+    font-weight: 700;
+
+}
+
+.chat-area {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #e9e9e9;
+}
+
+h3{
+    color: gray;
+}
+
+.you{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    height: 5vh;
+    margin-top: 8px;
+    position: relative;
+}
+
+.my-message-container {
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+.other-message-container {
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.my-message {
+    background-color: #d1ffd7;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    margin-left: auto;
+    width: fit-content;
+}
+
+.other-message {
+    background-color: #c6bbbb;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    margin-right: auto;
+    color: white;
+    width: fit-content;
+}
+
+.my-message-time{
+    display: flex;
+    float: right;
+}
+
+.other-message-time{
+    display: flex;
+    float: left;
+}
+
+.message-header {
+    font-weight: bold;
+}
+
+.message-footer {
+    font-size: 0.8em;
+    color: gray;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.send-message {
+    display: flex;
+    gap: 10px;
+}
+
+.send-message input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.send-message button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}

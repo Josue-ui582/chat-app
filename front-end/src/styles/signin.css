@@ -1,0 +1,30 @@
+
+.signin_container{
+    width: 80%;
+}
+
+.signin{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.signin > input{
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.signin > button{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: #7289da;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
